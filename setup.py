@@ -13,9 +13,8 @@ setup(
     license="MIT",
     package="vimception",
     packages=["vimception"],
-    install_requires=["pymonkey"],
+    install_requires=["autowrapt"],
     entry_points={
-        "pymonkey": ["vimception = vimception.pymonkey:pymonkey_patch"],
-        "pymonkey.argparse": ["vimception = vimception.pymonkey:pymonkey_argparse"],
-    },
+        'vimception': ['sys = vimception:autowrapt_sys'],
+    }
 )

@@ -8,7 +8,7 @@ import sys
 import traceback
 
 
-def excepthook(exctype, value, tb):
+def excepthook(exctype, value, tb) -> None:
     """Custom excepthook."""
 
     sys.__excepthook__(exctype, value, tb)
@@ -33,7 +33,13 @@ def excepthook(exctype, value, tb):
     subprocess.call(command)
 
 
-def replace_excepthook():
+def replace_excepthook(module=sys) -> None:
     """Replace excepthook."""
 
-    sys.excepthook, sys.__excepthook__ = excepthook, sys.excepthook
+    module.excepthook, module.__excepthook__ = excepthook, module.excepthook
+
+
+def autowrapt_sys(module):
+    """Hook for autowrapt."""
+
+    replace_excepthook(module)
