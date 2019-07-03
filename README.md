@@ -30,7 +30,7 @@ Engage `vimception` for a script run directly via `python`:
 $ vimception python somefile.py
 ```
 
-Engage `vimception` for some entry-point script:
+Engage `vimception` for some entry-point script (e.g. `pip`):
 ```sh
 $ vimception pip ...
 ```
