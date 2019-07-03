@@ -31,3 +31,9 @@ def excepthook(exctype, value, tb):
     ]
 
     subprocess.call(command)
+
+
+def replace_excepthook():
+    """Replace excepthook."""
+
+    sys.excepthook, sys.__excepthook__ = excepthook, sys.excepthook
