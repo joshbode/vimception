@@ -25,7 +25,7 @@ def excepthook(exctype, value, tb) -> None:
     command = [
         os.environ.get("EDITOR", "vim"),
         "-c",
-        f"call cursor({frame_summary.lineno}, 0)",
+        f"call cursor({frame_summary.lineno}, 0) | echo \"{exctype.__name__}: {value}\"",
         "--",
         filename,
     ]
