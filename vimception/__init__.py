@@ -37,9 +37,3 @@ def replace_excepthook(module=sys) -> None:
     """Replace excepthook."""
 
     module.excepthook, module.__excepthook__ = excepthook, module.excepthook
-
-
-def autowrapt_sys(module):
-    """Hook for autowrapt."""
-
-    replace_excepthook(module)
