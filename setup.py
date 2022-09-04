@@ -15,6 +15,6 @@ setup(
     packages=["vimception"],
     install_requires=["autowrapt"],
     entry_points={
-        'vimception': ['sys = vimception:replace_excepthook'],
-    }
+        "vimception": ["sys = vimception:replace_excepthook"],
+    },
 )
